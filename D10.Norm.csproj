@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{61E8518C-5AFE-4829-B5F0-1874BA20CEB0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>D10.Norm</RootNamespace>
+    <AssemblyName>D10.Norm</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actions.cs" />
+    <Compile Include="BitUtils.cs" />
+    <Compile Include="Caching\CacheHub.cs" />
+    <Compile Include="Caching\CacheManager.cs" />
+    <Compile Include="CollectionUtils.cs" />
+    <Compile Include="ConvertUtils.cs" />
+    <Compile Include="DatabaseUtils.cs" />
+    <Compile Include="FastInvoke.cs" />
+    <Compile Include="GenericOperatorFactory.cs" />
+    <Compile Include="ObjectBuilder\AliasAttribute.cs" />
+    <Compile Include="ObjectBuilder\DataRecordSourceBuilder.cs" />
+    <Compile Include="ObjectBuilder\Populators\CompositePopulator.cs" />
+    <Compile Include="ObjectBuilder\Populators\EnumPopulator.cs" />
+    <Compile Include="ObjectBuilder\Populators\IPopulator.cs" />
+    <Compile Include="ObjectBuilder\Populators\PopulatorFactory.cs" />
+    <Compile Include="ObjectBuilder\Populators\PrimitivePopulator.cs" />
+    <Compile Include="ObjectBuilder\TypeDescription.cs" />
+    <Compile Include="Persistance\ConnectionStringHandler.cs" />
+    <Compile Include="Persistance\PersistanceInterfaceHandler.cs" />
+    <Compile Include="Persistance\IPersistanceInterface.cs" />
+    <Compile Include="Persistance\SqlServerCommand.cs" />
+    <Compile Include="Persistance\SqlServerStoredProcedure.cs" />
+    <Compile Include="Persistance\SqlServerPersistanceCommon.cs" />
+    <Compile Include="Attributes\NormOperation.cs" />
+    <Compile Include="NormRunner.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReflectionUtils.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Results\BulkInsertResult.cs" />
+    <Compile Include="Results\FirstResult.cs" />
+    <Compile Include="Results\ResultBase.cs" />
+    <Compile Include="Results\RunCommandResult.cs" />
+    <Compile Include="Results\ScalarResult.cs" />
+    <Compile Include="Results\SingleSetResult.cs" />
+    <Compile Include="Results\SqlDataRecord.cs" />
+    <Compile Include="SqlUtils.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="TypeInfo.cs" />
+    <Compile Include="ValidationUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
